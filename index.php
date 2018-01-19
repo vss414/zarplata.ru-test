@@ -11,8 +11,8 @@ function save(array $data, string $fileName)
 
 $url = "https://api.zp.ru/v1/vacancies?";
 $parameters = [
-    'geo_id' => 826,
-    'add_date' => date("Y-m-d")
+    'geo_id' => 826, // Новосибирск
+    'add_date' => date("Y-m-d") // сегодняшняя дата
 ];
 
 $count = 1;
