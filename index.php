@@ -1,12 +1,12 @@
 <?php
-function save(array $data, string $file)
+function save(array $data, string $fileName)
 {
     arsort($data);
     $str = '';
     foreach ($data as $key => $value) {
         $str .= "| $key\t| $value\t|\n";
     }
-    file_put_contents($file, $str);
+    file_put_contents("$fileName.txt", $str);
 }
 
 $url = "https://api.zp.ru/v1/vacancies?";
@@ -55,6 +55,6 @@ while ($offset < $count) {
     $offset += $limit;
 }
 
-save($vacancies, 'vacancies.txt');
-save($rubrics, 'rubrics.txt');
-save($words, 'words.txt');
+save($vacancies, 'vacancies');
+save($rubrics, 'rubrics');
+save($words, 'words');
