@@ -1,5 +1,4 @@
 <?php
-
 function save(array $data, string $file)
 {
     arsort($data);
@@ -34,11 +33,10 @@ while ($offset < $count) {
 
         if (is_array($data->vacancies)) {
             foreach ($data->vacancies as $vacancy) {
-
                 $headerWords = explode(' ', $vacancy->header);
                 foreach ($headerWords as $word) {
                     if (mb_strlen($word) > 2) { // исключаю предлоги
-                        $words[mb_strtolower ($word)]++;
+                        $words[mb_strtolower($word)]++;
                     }
                 }
 
